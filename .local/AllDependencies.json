@@ -2074,7 +2074,7 @@
         }
       }
     },
-    ".NETFramework,Version=v4.6.1/win7-x86": {
+    ".NETFramework,Version=v4.6.1/win10-x64": {
       "BalaReva.EasyExcel.Activities/29.1.1": {
         "type": "package",
         "dependencies": {
@@ -2796,7 +2796,7 @@
           "lib/net45/Microsoft.Web.WebView2.Wpf.dll": {}
         },
         "native": {
-          "runtimes/win-x86/native/_._": {}
+          "runtimes/win-x64/native/_._": {}
         },
         "build": {
           "build/_._": {}
@@ -4153,6 +4153,7 @@
       "path": "closedxml/0.87.1",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "closedxml.0.87.1.nupkg.sha512",
         "closedxml.nuspec",
         "lib/net35/ClosedXML.dll",
@@ -4189,6 +4190,7 @@
       "path": "documentformat.openxml/2.5.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "documentformat.openxml.2.5.0.nupkg.sha512",
         "documentformat.openxml.nuspec",
         "lib/DocumentFormat.OpenXml.dll"
@@ -4200,6 +4202,7 @@
       "path": "google.apis/1.43.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "LICENSE",
         "NuGetIcon.png",
         "google.apis.1.43.0.nupkg.sha512",
@@ -4246,6 +4249,7 @@
       "path": "google.apis.calendar.v3/1.43.0.1872",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "LICENSE",
         "google.apis.calendar.v3.1.43.0.1872.nupkg.sha512",
         "google.apis.calendar.v3.nuspec",
@@ -4272,7 +4276,6 @@
       "path": "google.apis.core/1.43.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "LICENSE",
         "NuGetIcon.png",
         "google.apis.core.1.43.0.nupkg.sha512",
@@ -4294,6 +4297,7 @@
       "path": "google.apis.gmail.v1/1.43.0.1859",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "LICENSE",
         "google.apis.gmail.v1.1.43.0.1859.nupkg.sha512",
         "google.apis.gmail.v1.nuspec",
@@ -4320,6 +4324,7 @@
       "path": "google.apis.peopleservice.v1/1.43.0.1876",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "LICENSE",
         "google.apis.peopleservice.v1.1.43.0.1876.nupkg.sha512",
         "google.apis.peopleservice.v1.nuspec",
@@ -5506,6 +5511,7 @@
       "path": "nito.asyncex.context/5.1.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "icon.png",
         "lib/netstandard1.3/Nito.AsyncEx.Context.dll",
         "lib/netstandard1.3/Nito.AsyncEx.Context.xml",
@@ -5521,6 +5527,7 @@
       "path": "nito.asyncex.coordination/5.1.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "icon.png",
         "lib/netstandard1.3/Nito.AsyncEx.Coordination.dll",
         "lib/netstandard1.3/Nito.AsyncEx.Coordination.xml",
@@ -5536,6 +5543,7 @@
       "path": "nito.asyncex.interop.waithandles/5.1.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "icon.png",
         "lib/netstandard1.3/Nito.AsyncEx.Interop.WaitHandles.dll",
         "lib/netstandard1.3/Nito.AsyncEx.Interop.WaitHandles.xml",
@@ -5551,6 +5559,7 @@
       "path": "nito.asyncex.oop/5.1.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "icon.png",
         "lib/netstandard1.3/Nito.AsyncEx.Oop.dll",
         "lib/netstandard1.3/Nito.AsyncEx.Oop.xml",
@@ -5566,6 +5575,7 @@
       "path": "nito.asyncex.tasks/5.1.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "icon.png",
         "lib/netstandard1.3/Nito.AsyncEx.Tasks.dll",
         "lib/netstandard1.3/Nito.AsyncEx.Tasks.xml",
@@ -5581,6 +5591,7 @@
       "path": "nito.cancellation/1.1.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "icon.png",
         "lib/netstandard1.0/Nito.Cancellation.dll",
         "lib/netstandard1.0/Nito.Cancellation.xml",
@@ -5612,6 +5623,7 @@
       "path": "nito.disposables/2.2.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "icon.png",
         "lib/net461/Nito.Disposables.dll",
         "lib/net461/Nito.Disposables.xml",
@@ -7691,15 +7703,15 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Administrador\\.nuget\\packages\\": {}
+    "C:\\Users\\d788796\\.nuget\\packages\\": {}
   },
   "project": {
     "restore": {
       "projectUniqueName": "rpa_robot_esus_edge_version_1_1_0_21",
       "projectName": "rpa_robot_esus_edge_version_1_1_0_21",
-      "projectPath": "C:\\Users\\Administrador\\Documents\\UiPath\\rpa_esus_edge\\.local",
-      "packagesPath": "C:\\Users\\Administrador\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Administrador\\Documents\\UiPath\\rpa_esus_edge\\.local"
+      "projectPath": "C:\\Users\\d788796\\Documents\\UiPath\\rpa_esus_edge\\.local",
+      "packagesPath": "C:\\Users\\d788796\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\d788796\\Documents\\UiPath\\rpa_esus_edge\\.local"
     },
     "frameworks": {
       "net461": {
@@ -7735,7 +7747,12 @@
             "version": "[21.10.1, 21.10.1]"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Users\\Administrador\\AppData\\Local\\UiPath\\app-21.4.4\\runtime.json"
+        "runtimeIdentifierGraphPath": "C:\\Users\\d788796\\AppData\\Local\\Programs\\UiPath\\Studio\\runtime.json"
+      }
+    },
+    "runtimes": {
+      "win10-x64": {
+        "#import": []
       }
     }
   }
