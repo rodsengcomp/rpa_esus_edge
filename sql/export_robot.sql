@@ -43,9 +43,79 @@ ALTER TABLE `biofast_lab` ADD PRIMARY KEY(`Nome do paciente`);
 --- $$$ --- Script para consulta e exportação dos bancos --- $$$ ---
 
 SELECT esus_covisa.`NU_NOTIFIC`, esus_covisa.`DT_NOTIFIC`, esus_covisa.`NM_PACIENT`, esus_covisa.`DT_NASC`, esus_total.`Data do início dos sintomas`,
-       esus_covisa.SINTOMAS, biofast_lab.`Requisicao`, biofast_lab.`Data de cadastro`, biofast_lab.Resultado, esus_total.`Data da Coleta RT-PCR`, esus_total.`Resultado RT-PCR`, esus_total.`Estado do Teste RT-PCR`, esus_total.`Evolução Caso`, esus_total.`Classificação Final`,biofast_lab.`Nome do paciente`
-FROM (esus_covisa LEFT JOIN esus_total ON (esus_covisa.DT_NASC = esus_total.`Data de Nascimento`) AND (esus_covisa.NU_NOTIFIC = esus_total.`Número da Notificação`))
-         LEFT JOIN biofast_lab ON (esus_covisa.DT_NASC = biofast_lab.`Data de nascimento`) AND (esus_covisa.NM_PACIENT = biofast_lab.`Nome do paciente`);
+       esus_covisa.SINTOMAS, biofast_lab.`Requisicao`, biofast_lab.`Data de cadastro`, biofast_lab.Resultado,
+       esus_total.`Data da Coleta RT-PCR`, esus_total.`Resultado RT-PCR`, esus_total.`Estado do Teste RT-PCR`, esus_total.`Evolução Caso`,
+       esus_total.`Classificação Final`,biofast_lab.`Nome do paciente`,
+       CASE -- Parâmetros SQL para fechamento de casos
+           WHEN esus_total.`Resultado RT-PCR`='Detectável'
+               THEN 'CONF. LABOR.'
+           WHEN biofast_lab.Resultado='DETECTADO'
+               THEN 'CONF. LABOR.'
+           WHEN esus_total.`Resultado RT-PCR`='Inconclusivo ou Indeterminado' AND biofast_lab.Resultado='DETECTADO'
+               THEN 'CONF. LABOR.'
+           WHEN esus_total.`Resultado RT-PCR`='Não detectável'
+               AND (esus_covisa.SINTOMAS LIKE '%Olfativos%' OR esus_covisa.SINTOMAS LIKE '%Gustativos%')
+               THEN 'CONF. CRIT. CLÍNICO'
+           WHEN biofast_lab.Resultado='NÃO DETECTADO'
+               AND (esus_covisa.SINTOMAS LIKE '%Olfativos%' OR esus_covisa.SINTOMAS LIKE '%Gustativos%')
+               THEN 'CONF. CRIT. CLÍNICO'
+           WHEN esus_total.`Resultado RT-PCR`='Inconclusivo ou Indeterminado' AND biofast_lab.Resultado='NÃO DETECTADO'
+               AND (esus_covisa.SINTOMAS LIKE '%Olfativos%' OR esus_covisa.SINTOMAS LIKE '%Gustativos%')
+               THEN 'CONF. CRIT. CLÍNICO'
+           WHEN esus_total.`Resultado RT-PCR`='Não detectável'
+               AND (esus_covisa.SINTOMAS NOT LIKE '%Olfativos%' OR esus_covisa.SINTOMAS NOT LIKE '%Gustativos%')
+               THEN 'SGNE'
+           WHEN biofast_lab.Resultado='NÃO DETECTADO'
+               AND (esus_covisa.SINTOMAS NOT LIKE '%Olfativos%' OR esus_covisa.SINTOMAS NOT LIKE '%Gustativos%')
+               THEN 'SGNE'
+           WHEN esus_total.`Resultado RT-PCR`= '' AND biofast_lab.Resultado=''
+               AND (esus_covisa.SINTOMAS LIKE '%Olfativos%' OR esus_covisa.SINTOMAS LIKE '%Gustativos%')
+               THEN 'CONF. CRIT. CLÍNICO'
+           WHEN esus_total.`Resultado RT-PCR`='Inconclusivo ou Indeterminado' AND biofast_lab.Resultado=''
+               AND (esus_covisa.SINTOMAS LIKE '%Olfativos%' OR esus_covisa.SINTOMAS LIKE '%Gustativos%')
+               THEN 'CONF. CRIT. CLÍNICO'
+           ELSE '' END AS ROBÔ,
+       CASE -- Parâmetros SQL para verificar casos em aberto
+           WHEN esus_total.`Resultado RT-PCR`='Detectável' AND esus_total.`Evolução Caso`='Cura'
+               AND esus_total.`Classificação Final`='Confirmado Laboratorial'
+               THEN 'NAO'
+           WHEN biofast_lab.Resultado='DETECTADO' AND esus_total.`Evolução Caso`='Cura'
+               AND esus_total.`Classificação Final`='Confirmado Laboratorial'
+               THEN 'NAO'
+           WHEN esus_total.`Resultado RT-PCR`='Inconclusivo ou Indeterminado' AND biofast_lab.Resultado='DETECTADO'
+               AND esus_total.`Evolução Caso`='Cura' AND esus_total.`Classificação Final`='Confirmado Laboratorial'
+               THEN 'NAO'
+           WHEN esus_total.`Resultado RT-PCR`='Não detectável'
+               AND (esus_covisa.SINTOMAS LIKE '%Olfativos%' OR esus_covisa.SINTOMAS LIKE '%Gustativos%')
+               AND esus_total.`Evolução Caso`='Cura' AND esus_total.`Classificação Final`='Confirmado por Critério Clínico'
+               THEN 'NAO'
+           WHEN biofast_lab.Resultado='NÃO DETECTADO'
+               AND (esus_covisa.SINTOMAS LIKE '%Olfativos%' OR esus_covisa.SINTOMAS LIKE '%Gustativos%')
+               AND esus_total.`Evolução Caso`='Cura' AND esus_total.`Classificação Final`='Confirmado por Critério Clínico'
+               THEN 'NAO'
+           WHEN esus_total.`Resultado RT-PCR`='Inconclusivo ou Indeterminado' AND biofast_lab.Resultado='NÃO DETECTADO'
+               AND (esus_covisa.SINTOMAS LIKE '%Olfativos%' OR esus_covisa.SINTOMAS LIKE '%Gustativos%')
+               AND esus_total.`Evolução Caso`='Cura' AND esus_total.`Classificação Final`='Confirmado por Critério Clínico'
+               THEN 'NAO'
+           WHEN esus_total.`Resultado RT-PCR`='Não detectável'
+               AND (esus_covisa.SINTOMAS NOT LIKE '%Olfativos%' OR esus_covisa.SINTOMAS NOT LIKE '%Gustativos%')
+               AND esus_total.`Evolução Caso`='Cura' AND esus_total.`Classificação Final`='Síndrome Gripal Não Especificada'
+               THEN 'NAO'
+           WHEN biofast_lab.Resultado='NÃO DETECTADO'
+               AND (esus_covisa.SINTOMAS NOT LIKE '%Olfativos%' OR esus_covisa.SINTOMAS NOT LIKE '%Gustativos%')
+               AND esus_total.`Evolução Caso`='Cura' AND esus_total.`Classificação Final`='Síndrome Gripal Não Especificada'
+               THEN 'NAO'
+           WHEN esus_total.`Resultado RT-PCR`= '' AND biofast_lab.Resultado=''
+               AND (esus_covisa.SINTOMAS LIKE '%Olfativos%' OR esus_covisa.SINTOMAS LIKE '%Gustativos%')
+               AND esus_total.`Evolução Caso`='Cura' AND esus_total.`Classificação Final`='Confirmado por Critério Clínico'
+               THEN 'NAO'
+           ELSE 'SIM' END AS `CASOS EM ABERTO`
+FROM (esus_covisa
+    LEFT JOIN esus_total ON (esus_covisa.DT_NASC = esus_total.`Data de Nascimento`)
+        AND (esus_covisa.NU_NOTIFIC = esus_total.`Número da Notificação`))
+         LEFT JOIN biofast_lab ON (esus_covisa.DT_NASC = biofast_lab.`Data de nascimento`)
+    AND (esus_covisa.NM_PACIENT = biofast_lab.`Nome do paciente`)
+WHERE esus_covisa.`DT_NOTIFIC` LIKE '%/08/%'; -- Filtro de mês
 
 -- Comando SQL para apagar um ou mais dos de cada registro duplicado (mantém um dos registros)
 -- DELETE a FROM biofast_lab AS a, biofast_lab AS b WHERE a.`Nome do paciente`=b.`Nome do paciente` AND a.id < b.id;
