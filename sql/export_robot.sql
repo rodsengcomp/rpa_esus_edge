@@ -49,14 +49,14 @@ SELECT esus_covisa.`NU_NOTIFIC`, esus_covisa.`DT_NOTIFIC`, esus_covisa.`NM_PACIE
        CASE -- Parâmetros SQL para fechamento de casos
            WHEN esus_total.`Resultado RT-PCR`='Detectável'
                THEN 'CONF. LABOR.'
-           WHEN biofast_lab.Resultado='DETECTADO' AND esus_total.`Resultado RT-PCR`=''
+           WHEN esus_total.`Resultado RT-PCR`<>'Detectável' AND biofast_lab.Resultado='DETECTADO'
                THEN 'CONF. LABOR.'
            WHEN esus_total.`Resultado RT-PCR`='Inconclusivo ou Indeterminado' AND biofast_lab.Resultado='DETECTADO'
                THEN 'CONF. LABOR.'
            WHEN esus_total.`Resultado RT-PCR`='Não detectável'
                AND (esus_covisa.SINTOMAS LIKE '%Olf%' OR esus_covisa.SINTOMAS LIKE '%Gust%')
                THEN 'CONF. CRIT. CLÍNICO'
-           WHEN biofast_lab.Resultado='NÃO DETECTADO' AND esus_total.`Resultado RT-PCR`=''
+           WHEN esus_total.`Resultado RT-PCR`<>'Não detectável' AND biofast_lab.Resultado='NÃO DETECTADO'
                AND (esus_covisa.SINTOMAS LIKE '%Olf%' OR esus_covisa.SINTOMAS LIKE '%Gust%')
                THEN 'CONF. CRIT. CLÍNICO'
            WHEN esus_total.`Resultado RT-PCR`='Inconclusivo ou Indeterminado' AND biofast_lab.Resultado='NÃO DETECTADO'
