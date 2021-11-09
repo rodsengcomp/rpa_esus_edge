@@ -43,29 +43,35 @@ ALTER TABLE `biofast_lab` ADD PRIMARY KEY(`Nome do paciente`);
 --- $$$ --- Script para consulta e exportação dos bancos --- $$$ ---
 
 SELECT esus_covisa.`NU_NOTIFIC`, esus_covisa.`DT_NOTIFIC`, esus_covisa.`NM_PACIENT`, esus_covisa.`DT_NASC`, esus_total.`Data do início dos sintomas`,
-       esus_covisa.SINTOMAS, biofast_lab.`Requisicao`, biofast_lab.`Data de cadastro`, biofast_lab.Resultado,
+       esus_covisa.SINTOMAS, biofast_lab.`Requisicao`, biofast_lab.`Data de cadastro`,
+       CASE
+           WHEN biofast_lab.Resultado LIKE '%NÃO DETECTADO%'
+               THEN 'NÃO DETECTADO'
+           WHEN biofast_lab.Resultado LIKE '%DETECTADO%'
+               THEN 'DETECTADO'
+           ELSE '' END AS Resultado,
        esus_total.`Data da Coleta RT-PCR`, esus_total.`Resultado RT-PCR`, esus_total.`Estado do Teste RT-PCR`, esus_total.`Evolução Caso`,
        esus_total.`Classificação Final`,biofast_lab.`Nome do paciente`,
        CASE -- Parâmetros SQL para fechamento de casos
            WHEN esus_total.`Resultado RT-PCR`='Detectável'
                THEN 'CONF. LABOR.'
-           WHEN esus_total.`Resultado RT-PCR`<>'Detectável' AND biofast_lab.Resultado='DETECTADO'
+           WHEN esus_total.`Resultado RT-PCR`<>'Detectável' AND biofast_lab.Resultado LIKE '%DETECTADO%'
                THEN 'CONF. LABOR.'
-           WHEN esus_total.`Resultado RT-PCR`='Inconclusivo ou Indeterminado' AND biofast_lab.Resultado='DETECTADO'
+           WHEN esus_total.`Resultado RT-PCR`='Inconclusivo ou Indeterminado' AND biofast_lab.Resultado LIKE '%DETECTADO%'
                THEN 'CONF. LABOR.'
            WHEN esus_total.`Resultado RT-PCR`='Não detectável'
                AND (esus_covisa.SINTOMAS LIKE '%Olf%' OR esus_covisa.SINTOMAS LIKE '%Gust%')
                THEN 'CONF. CRIT. CLÍNICO'
-           WHEN esus_total.`Resultado RT-PCR`<>'Não detectável' AND biofast_lab.Resultado='NÃO DETECTADO'
+           WHEN esus_total.`Resultado RT-PCR`<>'Não detectável' AND biofast_lab.Resultado LIKE '%NÃO DETECTADO%'
                AND (esus_covisa.SINTOMAS LIKE '%Olf%' OR esus_covisa.SINTOMAS LIKE '%Gust%')
                THEN 'CONF. CRIT. CLÍNICO'
-           WHEN esus_total.`Resultado RT-PCR`='Inconclusivo ou Indeterminado' AND biofast_lab.Resultado='NÃO DETECTADO'
+           WHEN esus_total.`Resultado RT-PCR`='Inconclusivo ou Indeterminado' AND biofast_lab.Resultado LIKE '%NÃO DETECTADO%'
                AND (esus_covisa.SINTOMAS LIKE '%Olf%' OR esus_covisa.SINTOMAS LIKE '%Gust%')
                THEN 'CONF. CRIT. CLÍNICO'
            WHEN esus_total.`Resultado RT-PCR`='Não detectável'
                AND (esus_covisa.SINTOMAS NOT LIKE '%Olf%' OR esus_covisa.SINTOMAS NOT LIKE '%Gust%')
                THEN 'SGNE'
-           WHEN biofast_lab.Resultado='NÃO DETECTADO' AND esus_total.`Resultado RT-PCR`=''
+           WHEN biofast_lab.Resultado LIKE '%NÃO DETECTADO%' AND esus_total.`Resultado RT-PCR`<>'Não detectável'
                AND (esus_covisa.SINTOMAS NOT LIKE '%Olf%' OR esus_covisa.SINTOMAS NOT LIKE '%Gust%')
                THEN 'SGNE'
            WHEN (esus_total.`Resultado RT-PCR`= '' AND biofast_lab.Resultado='')
@@ -74,26 +80,28 @@ SELECT esus_covisa.`NU_NOTIFIC`, esus_covisa.`DT_NOTIFIC`, esus_covisa.`NM_PACIE
            WHEN esus_total.`Resultado RT-PCR`='Inconclusivo ou Indeterminado' AND biofast_lab.Resultado=''
                AND (esus_covisa.SINTOMAS LIKE '%Olf%' OR esus_covisa.SINTOMAS LIKE '%Gust%')
                THEN 'CONF. CRIT. CLÍNICO'
+           WHEN esus_covisa.SINTOMAS LIKE '%Olf%' OR esus_covisa.SINTOMAS LIKE '%Gust%'
+               THEN 'CONF. CRIT. CLÍNICO'
            ELSE '' END AS ROBÔ,
        CASE -- Parâmetros SQL para verificar casos em aberto
            WHEN esus_total.`Resultado RT-PCR`='Detectável' AND esus_total.`Evolução Caso`='Cura'
                AND esus_total.`Classificação Final`='Confirmado Laboratorial'
                THEN 'NAO'
-           WHEN biofast_lab.Resultado='DETECTADO' AND esus_total.`Evolução Caso`='Cura'
+           WHEN biofast_lab.Resultado LIKE '%DETECTADO%' AND esus_total.`Evolução Caso`='Cura'
                AND esus_total.`Classificação Final`='Confirmado Laboratorial'
                THEN 'NAO'
-           WHEN esus_total.`Resultado RT-PCR`='Inconclusivo ou Indeterminado' AND biofast_lab.Resultado='DETECTADO'
+           WHEN esus_total.`Resultado RT-PCR`='Inconclusivo ou Indeterminado' AND biofast_lab.Resultado LIKE '%DETECTADO%'
                AND esus_total.`Evolução Caso`='Cura' AND esus_total.`Classificação Final`='Confirmado Laboratorial'
                THEN 'NAO'
            WHEN esus_total.`Resultado RT-PCR`='Não detectável'
                AND (esus_covisa.SINTOMAS LIKE '%Olf%' OR esus_covisa.SINTOMAS LIKE '%Gust%')
                AND esus_total.`Evolução Caso`='Cura' AND esus_total.`Classificação Final`='Confirmado por Critério Clínico'
                THEN 'NAO'
-           WHEN biofast_lab.Resultado='NÃO DETECTADO'
+           WHEN biofast_lab.Resultado LIKE '%NÃO DETECTADO%'
                AND (esus_covisa.SINTOMAS LIKE '%Olf%' OR esus_covisa.SINTOMAS LIKE '%Gust%')
                AND esus_total.`Evolução Caso`='Cura' AND esus_total.`Classificação Final`='Confirmado por Critério Clínico'
                THEN 'NAO'
-           WHEN esus_total.`Resultado RT-PCR`='Inconclusivo ou Indeterminado' AND biofast_lab.Resultado='NÃO DETECTADO'
+           WHEN esus_total.`Resultado RT-PCR`='Inconclusivo ou Indeterminado' AND biofast_lab.Resultado LIKE '%NÃO DETECTADO%'
                AND (esus_covisa.SINTOMAS LIKE '%Olf%' OR esus_covisa.SINTOMAS LIKE '%Gust%')
                AND esus_total.`Evolução Caso`='Cura' AND esus_total.`Classificação Final`='Confirmado por Critério Clínico'
                THEN 'NAO'
@@ -101,7 +109,7 @@ SELECT esus_covisa.`NU_NOTIFIC`, esus_covisa.`DT_NOTIFIC`, esus_covisa.`NM_PACIE
                AND (esus_covisa.SINTOMAS NOT LIKE '%Olf%' OR esus_covisa.SINTOMAS NOT LIKE '%Gust%')
                AND esus_total.`Evolução Caso`='Cura' AND esus_total.`Classificação Final`='Síndrome Gripal Não Especificada'
                THEN 'NAO'
-           WHEN biofast_lab.Resultado='NÃO DETECTADO'
+           WHEN biofast_lab.Resultado LIKE '%NÃO DETECTADO%'
                AND (esus_covisa.SINTOMAS NOT LIKE '%Olf%' OR esus_covisa.SINTOMAS NOT LIKE '%Gust%')
                AND esus_total.`Evolução Caso`='Cura' AND esus_total.`Classificação Final`='Síndrome Gripal Não Especificada'
                THEN 'NAO'
