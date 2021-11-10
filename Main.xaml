@@ -113,7 +113,7 @@
           <av:Size x:Key="ShapeSize">200,66</av:Size>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Sequence DisplayName="Sequência BOT ROLUWA" sap:VirtualizedContainerService.HintSize="1621,3884" sap2010:WorkflowViewState.IdRef="Sequence_1">
+      <Sequence DisplayName="Sequência BOT ROLUWA" sap:VirtualizedContainerService.HintSize="1621,4082" sap2010:WorkflowViewState.IdRef="Sequence_1">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -148,32 +148,32 @@
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
         </ui:ExcelApplicationScope>
-        <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[excel_esus]" DisplayName="For Each Row in Data Table Esus Notifica" sap:VirtualizedContainerService.HintSize="1579,3492" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+        <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[excel_esus]" DisplayName="For Each Row in Data Table Esus Notifica" sap:VirtualizedContainerService.HintSize="1579,3690" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
           <ui:ForEachRow.Body>
             <ActivityAction x:TypeArguments="sd:DataRow">
               <ActivityAction.Argument>
                 <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
               </ActivityAction.Argument>
-              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="1545,3319" sap2010:WorkflowViewState.IdRef="Sequence_3">
+              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="1545,3517" sap2010:WorkflowViewState.IdRef="Sequence_3">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Edge: e-SUS Notifica" sap:VirtualizedContainerService.HintSize="1503,3227" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="IfNotOpen" ScopeGuid="ace6996b-1782-4e69-828e-e6d71de2871f" Version="V1" WindowResize="Maximize">
+                <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Edge: e-SUS Notifica" sap:VirtualizedContainerService.HintSize="1503,3425" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="IfNotOpen" ScopeGuid="ace6996b-1782-4e69-828e-e6d71de2871f" Version="V1" WindowResize="Maximize">
                   <uix:NApplicationCard.Body>
                     <ActivityAction x:TypeArguments="x:Object">
                       <ActivityAction.Argument>
                         <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                       </ActivityAction.Argument>
-                      <Sequence DisplayName="Fazer" sap:VirtualizedContainerService.HintSize="1469,3011" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                      <Sequence DisplayName="Fazer" sap:VirtualizedContainerService.HintSize="1469,3209" sap2010:WorkflowViewState.IdRef="Sequence_4">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <ui:IfElseIf DisplayName="Else If" sap:VirtualizedContainerService.HintSize="1427,2917" sap2010:WorkflowViewState.IdRef="IfElseIf_60">
+                        <ui:IfElseIf DisplayName="Else If" sap:VirtualizedContainerService.HintSize="1427,3115" sap2010:WorkflowViewState.IdRef="IfElseIf_60">
                           <ui:IfElseIf.ConditionBlocks>
                             <sc:BindingList x:TypeArguments="ui:IfElseIfBlock" AllowEdit="True" AllowNew="True" AllowRemove="True" RaiseListChangedEvents="True">
                               <ui:IfElseIfBlock BlockType="If" Condition="[row.Item(8).ToString = &quot;&quot; AND row.Item(10).ToString = &quot;&quot;]">
@@ -617,7 +617,7 @@
                               </ui:IfElseIfBlock>
                               <ui:IfElseIfBlock BlockType="Else">
                                 <ui:IfElseIfBlock.Then>
-                                  <Sequence DisplayName="COM EXAMES" sap:VirtualizedContainerService.HintSize="1376,2626" sap2010:WorkflowViewState.IdRef="Sequence_541">
+                                  <Sequence DisplayName="COM EXAMES" sap:VirtualizedContainerService.HintSize="1376,2824" sap2010:WorkflowViewState.IdRef="Sequence_541">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -724,19 +724,19 @@
                                         </sap:WorkflowViewStateService.ViewState>
                                       </ui:Click>
                                     </Sequence>
-                                    <ui:IfElseIf DisplayName="Else If Resultado RT-PCR eSUS Notifica" sap:VirtualizedContainerService.HintSize="1334,2428" sap2010:WorkflowViewState.IdRef="IfElseIf_59">
+                                    <ui:IfElseIf DisplayName="Else If Resultado RT-PCR eSUS Notifica" sap:VirtualizedContainerService.HintSize="1334,2626" sap2010:WorkflowViewState.IdRef="IfElseIf_59">
                                       <ui:IfElseIf.ConditionBlocks>
                                         <sc:BindingList x:TypeArguments="ui:IfElseIfBlock" AllowEdit="True" AllowNew="True" AllowRemove="True" RaiseListChangedEvents="True">
                                           <ui:IfElseIfBlock BlockType="If" Condition="[row.Item(10).ToString &lt;&gt; &quot;&quot;]">
                                             <ui:IfElseIfBlock.Then>
-                                              <Sequence DisplayName="RT-PCR eSUS Notifica" sap:VirtualizedContainerService.HintSize="1283,1479" sap2010:WorkflowViewState.IdRef="Sequence_471">
+                                              <Sequence DisplayName="RT-PCR eSUS Notifica" sap:VirtualizedContainerService.HintSize="1283,1677" sap2010:WorkflowViewState.IdRef="Sequence_471">
                                                 <sap:WorkflowViewStateService.ViewState>
                                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                                   </scg:Dictionary>
                                                 </sap:WorkflowViewStateService.ViewState>
-                                                <ui:IfElseIf DisplayName="Else If RT-PCR eSUS Notifica" sap:VirtualizedContainerService.HintSize="1241,1387" sap2010:WorkflowViewState.IdRef="IfElseIf_68">
+                                                <ui:IfElseIf DisplayName="Else If RT-PCR eSUS Notifica" sap:VirtualizedContainerService.HintSize="1241,1585" sap2010:WorkflowViewState.IdRef="IfElseIf_68">
                                                   <ui:IfElseIf.ConditionBlocks>
                                                     <sc:BindingList x:TypeArguments="ui:IfElseIfBlock" AllowEdit="True" AllowNew="True" AllowRemove="True" RaiseListChangedEvents="True">
                                                       <ui:IfElseIfBlock BlockType="If" Condition="[row.Item(10).ToString = &quot;Detectável&quot;]">
@@ -1050,7 +1050,7 @@
                                                                 </scg:Dictionary>
                                                               </sap:WorkflowViewStateService.ViewState>
                                                               <If.Then>
-                                                                <Sequence DisplayName="Sequência Fechamento com sintomas gustativos/olfativos" sap:VirtualizedContainerService.HintSize="242,325" sap2010:WorkflowViewState.IdRef="Sequence_553">
+                                                                <Sequence DisplayName="Sequência Fechamento com sintomas gustativos/olfativos" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_553">
                                                                   <sap:WorkflowViewStateService.ViewState>
                                                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                       <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -1633,23 +1633,23 @@
                                                       </ui:IfElseIfBlock>
                                                       <ui:IfElseIfBlock BlockType="ElseIf" Condition="[row.Item(10).ToString = &quot;Inconclusivo ou Indeterminado&quot;]">
                                                         <ui:IfElseIfBlock.Then>
-                                                          <Sequence DisplayName="Resultados BIOFAST" sap:VirtualizedContainerService.HintSize="1190,821" sap2010:WorkflowViewState.IdRef="Sequence_584">
+                                                          <Sequence DisplayName="Resultados BIOFAST" sap:VirtualizedContainerService.HintSize="1190,1019" sap2010:WorkflowViewState.IdRef="Sequence_584">
                                                             <sap:WorkflowViewStateService.ViewState>
                                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                                               </scg:Dictionary>
                                                             </sap:WorkflowViewStateService.ViewState>
-                                                            <ui:IfElseIf DisplayName="Else If" sap:VirtualizedContainerService.HintSize="1148,729" sap2010:WorkflowViewState.IdRef="IfElseIf_67">
+                                                            <ui:IfElseIf DisplayName="Else If" sap:VirtualizedContainerService.HintSize="1148,927" sap2010:WorkflowViewState.IdRef="IfElseIf_67">
                                                               <ui:IfElseIf.ConditionBlocks>
                                                                 <sc:BindingList x:TypeArguments="ui:IfElseIfBlock" AllowEdit="True" AllowNew="True" AllowRemove="True" RaiseListChangedEvents="True">
                                                                   <ui:IfElseIfBlock BlockType="If" Condition="[row.Item(8).ToString = &quot;DETECTADO&quot;]">
                                                                     <ui:IfElseIfBlock.Then>
-                                                                      <Sequence DisplayName="DETECTADO BIO" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_569">
+                                                                      <Sequence DisplayName="DETECTADO BIO" sap:VirtualizedContainerService.HintSize="242,264" sap2010:WorkflowViewState.IdRef="Sequence_569">
                                                                         <sap:WorkflowViewStateService.ViewState>
                                                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                                                            <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                                                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                                                           </scg:Dictionary>
                                                                         </sap:WorkflowViewStateService.ViewState>
                                                                         <Sequence DisplayName="Resultado DETECTADO" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_563">
@@ -1674,7 +1674,7 @@
                                                                                     <x:Boolean x:Key="IsPinned">True</x:Boolean>
                                                                                   </scg:Dictionary>
                                                                                 </sap:WorkflowViewStateService.ViewState>
-                                                                                <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'Editar'" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="Click_215" KeyModifiers="None" MouseButton="BTN_LEFT">
+                                                                                <ui:Click AlterIfDisabled="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DelayBefore="1000" DisplayName="Click 'Editar'" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="Click_215" KeyModifiers="None" MouseButton="BTN_LEFT">
                                                                                   <ui:Click.CursorPosition>
                                                                                     <ui:CursorPosition Position="Center">
                                                                                       <ui:CursorPosition.OffsetX>
@@ -2799,11 +2799,11 @@
                                                                               <x:Boolean x:Key="IsPinned">True</x:Boolean>
                                                                             </scg:Dictionary>
                                                                           </sap:WorkflowViewStateService.ViewState>
-                                                                          <If Condition="[row.Item(11).ToString = &quot;Coletado&quot;]" DisplayName="If Exame Coletado" sap:VirtualizedContainerService.HintSize="484,213" sap2010:WorkflowViewState.IdRef="If_226">
+                                                                          <If Condition="[row.Item(11).ToString = &quot;Coletado&quot;]" DisplayName="If Exame Coletado" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="If_226">
                                                                             <sap:WorkflowViewStateService.ViewState>
                                                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                                                <x:Boolean x:Key="IsPinned">True</x:Boolean>
                                                                               </scg:Dictionary>
                                                                             </sap:WorkflowViewStateService.ViewState>
                                                                             <If.Then>
@@ -2814,7 +2814,7 @@
                                                                                     <x:Boolean x:Key="IsPinned">True</x:Boolean>
                                                                                   </scg:Dictionary>
                                                                                 </sap:WorkflowViewStateService.ViewState>
-                                                                                <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'Editar'" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="Click_214" KeyModifiers="None" MouseButton="BTN_LEFT">
+                                                                                <ui:Click AlterIfDisabled="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DelayBefore="1000" DisplayName="Click 'Editar'" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="Click_214" KeyModifiers="None" MouseButton="BTN_LEFT">
                                                                                   <ui:Click.CursorPosition>
                                                                                     <ui:CursorPosition Position="Center">
                                                                                       <ui:CursorPosition.OffsetX>
@@ -4628,7 +4628,7 @@
                                                                         <x:Boolean x:Key="IsPinned">True</x:Boolean>
                                                                       </scg:Dictionary>
                                                                     </sap:WorkflowViewStateService.ViewState>
-                                                                    <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'Editar'" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="Click_212" KeyModifiers="None" MouseButton="BTN_LEFT">
+                                                                    <ui:Click AlterIfDisabled="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DelayBefore="1000" DisplayName="Click 'Editar'" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="Click_212" KeyModifiers="None" MouseButton="BTN_LEFT">
                                                                       <ui:Click.CursorPosition>
                                                                         <ui:CursorPosition Position="Center">
                                                                           <ui:CursorPosition.OffsetX>
@@ -5746,14 +5746,14 @@
                                                                 <x:Boolean x:Key="IsPinned">True</x:Boolean>
                                                               </scg:Dictionary>
                                                             </sap:WorkflowViewStateService.ViewState>
-                                                            <Sequence DisplayName="Resultado NÃO DETECTADO" sap:VirtualizedContainerService.HintSize="663,1038" sap2010:WorkflowViewState.IdRef="Sequence_802">
+                                                            <Sequence DisplayName="Resultado NÃO DETECTADO" sap:VirtualizedContainerService.HintSize="663,1049" sap2010:WorkflowViewState.IdRef="Sequence_802">
                                                               <sap:WorkflowViewStateService.ViewState>
                                                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                                                 </scg:Dictionary>
                                                               </sap:WorkflowViewStateService.ViewState>
-                                                              <If Condition="[row.Item(11).ToString = &quot;Coletado&quot;]" DisplayName="If Exame Coletado" sap:VirtualizedContainerService.HintSize="621,946" sap2010:WorkflowViewState.IdRef="If_232">
+                                                              <If Condition="[row.Item(11).ToString = &quot;Coletado&quot;]" DisplayName="If Exame Coletado" sap:VirtualizedContainerService.HintSize="621,957" sap2010:WorkflowViewState.IdRef="If_232">
                                                                 <sap:WorkflowViewStateService.ViewState>
                                                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
