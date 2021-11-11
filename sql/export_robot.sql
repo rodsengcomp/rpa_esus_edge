@@ -123,7 +123,7 @@ FROM (esus_covisa
         AND (esus_covisa.NU_NOTIFIC = esus_total.`Número da Notificação`))
          LEFT JOIN biofast_lab ON (esus_covisa.DT_NASC = biofast_lab.`Data de nascimento`)
     AND (esus_covisa.NM_PACIENT = biofast_lab.`Nome do paciente`)
-WHERE esus_covisa.`DT_NOTIFIC` LIKE '%/08/%'; -- Filtro de mês
+WHERE esus_covisa.`DT_NOTIFIC` LIKE '%/02/%'; -- Filtro de mês
 
 -- Comando SQL para apagar um ou mais dos de cada registro duplicado (mantém um dos registros)
 -- DELETE a FROM biofast_lab AS a, biofast_lab AS b WHERE a.`Nome do paciente`=b.`Nome do paciente` AND a.id < b.id;
