@@ -7703,15 +7703,15 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\d788796\\.nuget\\packages\\": {}
+    "C:\\Users\\rodol\\.nuget\\packages\\": {}
   },
   "project": {
     "restore": {
       "projectUniqueName": "rpa_robot_esus_edge_version_1_1_0_21",
       "projectName": "rpa_robot_esus_edge_version_1_1_0_21",
-      "projectPath": "C:\\Users\\d788796\\Documents\\UiPath\\rpa_esus_edge\\.local",
-      "packagesPath": "C:\\Users\\d788796\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\d788796\\Documents\\UiPath\\rpa_esus_edge\\.local"
+      "projectPath": "C:\\Users\\rodol\\Documents\\UiPath\\rpa_esus_edge\\.local",
+      "packagesPath": "C:\\Users\\rodol\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\rodol\\Documents\\UiPath\\rpa_esus_edge\\.local"
     },
     "frameworks": {
       "net461": {
@@ -7747,7 +7747,7 @@
             "version": "[21.10.1, 21.10.1]"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Users\\d788796\\AppData\\Local\\Programs\\UiPath\\Studio\\runtime.json"
+        "runtimeIdentifierGraphPath": "C:\\Users\\rodol\\AppData\\Local\\Programs\\UiPath\\Studio\\runtime.json"
       }
     },
     "runtimes": {
@@ -7755,13 +7755,5 @@
         "#import": []
       }
     }
-  },
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problem reading the cache file C:\\Users\\d788796\\Documents\\UiPath\\rpa_esus_edge\\.local\\nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  }
 }
