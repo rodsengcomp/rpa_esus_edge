@@ -23,8 +23,13 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="Z:/sisdamweb" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\d788796\Documents\UiPath\rpa_esus_edge\sql" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -38,6 +43,8 @@
       <workItem from="1636479679946" duration="2236000" />
       <workItem from="1636558611886" duration="983000" />
       <workItem from="1636654477531" duration="1956000" />
+      <workItem from="1637926293092" duration="650000" />
+      <workItem from="1638184165107" duration="6642000" />
     </task>
     <servers />
   </component>
