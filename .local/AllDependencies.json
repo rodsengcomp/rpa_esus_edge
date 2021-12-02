@@ -7703,15 +7703,15 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\rodol\\.nuget\\packages\\": {}
+    "C:\\Users\\Administrador\\.nuget\\packages\\": {}
   },
   "project": {
     "restore": {
       "projectUniqueName": "rpa_robot_esus_edge_version_1_1_0_21",
       "projectName": "rpa_robot_esus_edge_version_1_1_0_21",
-      "projectPath": "C:\\Users\\rodol\\Documents\\UiPath\\rpa_esus_edge\\.local",
-      "packagesPath": "C:\\Users\\rodol\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\rodol\\Documents\\UiPath\\rpa_esus_edge\\.local"
+      "projectPath": "C:\\Users\\Administrador\\Documents\\UiPath\\rpa_esus_edge\\.local",
+      "packagesPath": "C:\\Users\\Administrador\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Administrador\\Documents\\UiPath\\rpa_esus_edge\\.local"
     },
     "frameworks": {
       "net461": {
@@ -7747,7 +7747,7 @@
             "version": "[21.10.1, 21.10.1]"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Users\\rodol\\AppData\\Local\\Programs\\UiPath\\Studio\\runtime.json"
+        "runtimeIdentifierGraphPath": "C:\\Users\\Administrador\\AppData\\Local\\Programs\\UiPath\\Studio\\runtime.json"
       }
     },
     "runtimes": {
