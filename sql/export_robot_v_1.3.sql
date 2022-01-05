@@ -54,6 +54,7 @@ SELECT esus_covisa.`NU_NOTIFIC`, esus_covisa.`DT_NOTIFIC`, esus_covisa.`NM_PACIE
        esus_total.`Data da Coleta RT-PCR`, esus_total.`Resultado RT-PCR`, esus_total.`Estado do Teste RT-PCR`, esus_total.`Estado do Teste Sorológico IgA`,
        esus_total.`Data da Coleta Sorológico IgA`, esus_total.`Resultado Sorológico IgA`, esus_total.`Estado do Teste Sorológico IgM`,	esus_total.`Data da Coleta Sorológico IgM`,
        esus_total.`Resultado Sorológico IgM`,	esus_total.`Estado do Teste Sorológico IgG`, esus_total.`Data da Coleta Sorológico IgG`, esus_total.`Resultado Sorológico IgG`,
+       esus_total.`Estado do Teste Rápido antígeno`, esus_total.`Data da Coleta Rápido antígeno`, esus_total.`Resultado Rápido antígeno`,
        esus_total.`Evolução Caso`, esus_total.`Classificação Final`,biofast_lab.`Nome do paciente`,
        CASE -- Parâmetros SQL para fechamento de casos
            WHEN esus_total.`Resultado RT-PCR`='Detectável'
