@@ -119,7 +119,7 @@
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope Esus Notifica" sap:VirtualizedContainerService.HintSize="1579,260" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" InstanceCachePeriod="3000" WorkbookPath="fechamentos_2022\esus_covisa_biofast_maio_05012022.xlsx">
+        <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope Esus Notifica" sap:VirtualizedContainerService.HintSize="1579,260" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" InstanceCachePeriod="3000" WorkbookPath="fechamentos_2022\marco_2021\esus_covisa_biofast_maio_05012022_planilha_4.xlsx">
           <ui:ExcelApplicationScope.Body>
             <ActivityAction x:TypeArguments="ui:WorkbookApplication">
               <ActivityAction.Argument>
@@ -1337,7 +1337,7 @@
                                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
-                                    <Sequence DisplayName="Pesquisar no eSUS Notifica" sap:VirtualizedContainerService.HintSize="1334,66" sap2010:WorkflowViewState.IdRef="Sequence_464">
+                                    <Sequence DisplayName="Pesquisar no eSUS Notifica" sap:VirtualizedContainerService.HintSize="242,416" sap2010:WorkflowViewState.IdRef="Sequence_464">
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -1442,19 +1442,19 @@
                                         <sc:BindingList x:TypeArguments="ui:IfElseIfBlock" AllowEdit="True" AllowNew="True" AllowRemove="True" RaiseListChangedEvents="True">
                                           <ui:IfElseIfBlock BlockType="If" Condition="[row.Item(10).ToString &lt;&gt; &quot;&quot;]">
                                             <ui:IfElseIfBlock.Then>
-                                              <Sequence DisplayName="RT-PCR eSUS Notifica" sap:VirtualizedContainerService.HintSize="1283,1479" sap2010:WorkflowViewState.IdRef="Sequence_471">
+                                              <Sequence DisplayName="RT-PCR eSUS Notifica" sap:VirtualizedContainerService.HintSize="622,1479" sap2010:WorkflowViewState.IdRef="Sequence_471">
                                                 <sap:WorkflowViewStateService.ViewState>
                                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                                   </scg:Dictionary>
                                                 </sap:WorkflowViewStateService.ViewState>
-                                                <ui:IfElseIf DisplayName="Else If RT-PCR eSUS Notifica" sap:VirtualizedContainerService.HintSize="1241,1387" sap2010:WorkflowViewState.IdRef="IfElseIf_68">
+                                                <ui:IfElseIf DisplayName="Else If RT-PCR eSUS Notifica" sap:VirtualizedContainerService.HintSize="580,1387" sap2010:WorkflowViewState.IdRef="IfElseIf_68">
                                                   <ui:IfElseIf.ConditionBlocks>
                                                     <sc:BindingList x:TypeArguments="ui:IfElseIfBlock" AllowEdit="True" AllowNew="True" AllowRemove="True" RaiseListChangedEvents="True">
                                                       <ui:IfElseIfBlock BlockType="If" Condition="[row.Item(10).ToString = &quot;Detectável&quot;]">
                                                         <ui:IfElseIfBlock.Then>
-                                                          <Sequence DisplayName="Fechar Cura/Critério Clinico Laboratorial" sap:VirtualizedContainerService.HintSize="529,1030" sap2010:WorkflowViewState.IdRef="Sequence_547">
+                                                          <Sequence DisplayName="Fechar Cura/Critério Clinico Laboratorial" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_547">
                                                             <sap:WorkflowViewStateService.ViewState>
                                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                 <x:Boolean x:Key="IsExpanded">False</x:Boolean>
