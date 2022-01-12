@@ -23,7 +23,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="Z:/sisdamweb" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -46,6 +46,9 @@
       <workItem from="1637926293092" duration="650000" />
       <workItem from="1638184165107" duration="6642000" />
       <workItem from="1641259624246" duration="1566000" />
+      <workItem from="1641553363830" duration="35000" />
+      <workItem from="1641984377280" duration="1343000" />
+      <workItem from="1641987497317" duration="2688000" />
     </task>
     <servers />
   </component>
