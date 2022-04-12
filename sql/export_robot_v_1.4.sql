@@ -14,7 +14,7 @@ TRUNCATE TABLE esus_total;
 --*** Script de extração mensal de dados retirados no eSUS Notifica -> https://notifica.saude.gov.br/exportacoes --***
 
 -- Carregando os dados em excel .csv da pasta abaixo para o servidor -> tabela -> esus_total ...
-LOAD DATA INFILE 'C:/csv/esus/esus_total_.csv'
+LOAD DATA INFILE 'C:/Users/d788796/Documents/UiPath/rpa_esus_edge/sql/esus_total_.csv'
 INTO TABLE `esus_total` CHARACTER SET utf8 FIELDS TERMINATED BY ';' IGNORE 1 ROWS;
 
 -- Alterando o campo Número de Notificação da tabela esus_total para chave primária
@@ -23,9 +23,9 @@ ALTER TABLE `esus_total` ADD PRIMARY KEY(`Número da Notificação`);
 
 --*** Script de extração mensal de dados retirados no Covisa Intranet -> http://covisa.prodam/SUVIS/Resp.aspx
 
--- Carregando os dados em excel .csv da pasta abaixo para o servidor -> tabela -> esus_covisa ...
-LOAD DATA INFILE 'C:/csv/esus/esus_.csv'
-INTO TABLE `esus_total` CHARACTER SET utf8 FIELDS TERMINATED BY ';' IGNORE 1 ROWS;
+-- Carregando os dados em excel .csv da pasta abaixo para o servidor -> tabela -> esus_total ...
+LOAD DATA INFILE 'C:/Users/d788796/Documents/UiPath/rpa_esus_edge/sql/esus_covisa_janeiro.csv'
+INTO TABLE `esus_covisa` CHARACTER SET utf8 FIELDS TERMINATED BY ';' IGNORE 1 ROWS;
 
 -- Alterando o campo NU_NOTIFIC da tabela esus_covisa para chave primária
 -- Importante retirar duplicatas antes de carregar a planilha excel .csv para o servidor ...
@@ -34,7 +34,7 @@ ALTER TABLE `esus_covisa` ADD PRIMARY KEY(`NU_NOTIFIC`);
 --*** Script de extração mensal de dados retirados no Laboratório Biofast ->
 
 -- Carregando os dados em excel .csv da pasta abaixo para o servidor -> tabela -> biofast_lab ...
-LOAD DATA INFILE 'C:/csv/esus/biofast_lab.csv'
+LOAD DATA INFILE 'C:/Users/d788796/Documents/UiPath/rpa_esus_edge/sql/biofast_lab_janeiro.csv'
 INTO TABLE `biofast_lab` CHARACTER SET utf8 FIELDS TERMINATED BY ';' IGNORE 1 ROWS;
 
 -- Alterando o campo Nome do paciente da tabela biofast_lab para chave primária
@@ -140,7 +140,7 @@ FROM (esus_covisa
         AND (esus_covisa.NU_NOTIFIC = esus_total.`Número da Notificação`))
          LEFT JOIN biofast_lab ON (esus_covisa.DT_NASC = biofast_lab.`Data de nascimento`)
     AND (esus_covisa.NM_PACIENT = biofast_lab.`Nome do paciente`)
-WHERE esus_covisa.`DT_NOTIFIC` LIKE '%/02/%'; -- Filtro de mês
+WHERE esus_covisa.`DT_NOTIFIC` LIKE '%/01/%'; -- Filtro de mês
 
 -- Comando SQL para apagar um ou mais dos de cada registro duplicado (mantém um dos registros)
 -- DELETE a FROM biofast_lab AS a, biofast_lab AS b WHERE a.`Nome do paciente`=b.`Nome do paciente` AND a.id < b.id;
