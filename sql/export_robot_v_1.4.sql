@@ -14,7 +14,7 @@ TRUNCATE TABLE esus_total;
 --*** Script de extração mensal de dados retirados no eSUS Notifica -> https://notifica.saude.gov.br/exportacoes --***
 
 -- Carregando os dados em excel .csv da pasta abaixo para o servidor -> tabela -> esus_total ...
-LOAD DATA INFILE 'C:/Users/d788796/Documents/UiPath/rpa_esus_edge/sql/esus_total_.csv'
+LOAD DATA INFILE 'C:/csv/esus/esus_total_fevereiro.csv'
 INTO TABLE `esus_total` CHARACTER SET utf8 FIELDS TERMINATED BY ';' IGNORE 1 ROWS;
 
 -- Alterando o campo Número de Notificação da tabela esus_total para chave primária
@@ -37,6 +37,11 @@ ALTER TABLE `esus_covisa` ADD PRIMARY KEY(`NU_NOTIFIC`);
 LOAD DATA INFILE 'C:/Users/d788796/Documents/UiPath/rpa_esus_edge/sql/biofast_lab_janeiro.csv'
 INTO TABLE `biofast_lab` CHARACTER SET utf8 FIELDS TERMINATED BY ';' IGNORE 1 ROWS;
 
+-- Comando SQL para apagar um ou mais dos de cada registro duplicado (mantém um dos registros)
+DELETE a FROM biofast_lab AS a, biofast_lab AS b WHERE `a`.`Nome do paciente`=`b`.`Nome do paciente` AND a.id < b.id;
+
+ALTER TABLE biofast_lab DROP COLUMN id;
+
 -- Alterando o campo Nome do paciente da tabela biofast_lab para chave primária
 -- Importante retirar duplicatas antes de carregar a planilha excel .csv para o servidor ...
 ALTER TABLE `biofast_lab` ADD PRIMARY KEY(`Nome do paciente`);
@@ -54,8 +59,7 @@ SELECT esus_covisa.`NU_NOTIFIC`, esus_covisa.`DT_NOTIFIC`, esus_covisa.`NM_PACIE
        esus_total.`Data da Coleta RT-PCR`, esus_total.`Resultado RT-PCR`, esus_total.`Estado do Teste RT-PCR`, esus_total.`Estado do Teste RT-LAMP`, esus_total.`Data da Coleta RT-LAMP`,
        esus_total.`Resultado RT-LAMP`, esus_total.`Estado do Teste Sorológico IgA`, esus_total.`Data da Coleta Sorológico IgA`, esus_total.`Resultado Sorológico IgA`,
        esus_total.`Estado do Teste Sorológico IgM`,	esus_total.`Data da Coleta Sorológico IgM`, esus_total.`Resultado Sorológico IgM`, esus_total.`Estado do Teste Sorológico IgG`,
-       esus_total.`Data da Coleta Sorológico IgG`, esus_total.`Resultado Sorológico IgG`, esus_total.`Estado do Teste Rápido antígeno`, esus_total.`Data da Coleta Rápido antígeno`,
-       esus_total.`Resultado Rápido antígeno`, esus_total.`Estado do Teste Sorológico Anti Tot`, esus_total.`Data da Coleta Sorológico Anti Tot`,
+       esus_total.`Data da Coleta Sorológico IgG`, esus_total.`Resultado Sorológico IgG`, esus_total.`Estado do Teste Sorológico Anti Tot`, esus_total.`Data da Coleta Sorológico Anti Tot`,
        esus_total.`Resultado Sorológico Anticorpos Totais`,	esus_total.`Estado do Teste Rápido anticorpo IgM`, esus_total.`Data da Coleta Rápido anticorpo IgM`,
        esus_total.`Resultado Rápido anticorpo IgM`,	esus_total.`Estado do Teste Rápido anticorpo IgG`,	esus_total.`Data da Coleta Rápido anticorpo IgG`,
        esus_total.`Resultado Rápido anticorpo IgG`,	esus_total.`Estado do Teste Rápido antígeno`, esus_total.`Data da Coleta Rápido antígeno`, esus_total.`Resultado Rápido antígeno`,
