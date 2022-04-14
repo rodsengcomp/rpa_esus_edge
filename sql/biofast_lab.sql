@@ -2,10 +2,10 @@
 -- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 10.47.171.69
--- Tempo de geração: 29-Out-2021 às 21:24
--- Versão do servidor: 10.4.20-MariaDB
--- versão do PHP: 7.3.29
+-- Host: 127.0.0.1
+-- Tempo de geração: 14-Abr-2022 às 01:32
+-- Versão do servidor: 10.4.22-MariaDB
+-- versão do PHP: 8.1.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -37,8 +37,8 @@ CREATE TABLE `biofast_lab` (
   `Data de nascimento` varchar(18) DEFAULT NULL,
   `Data de cadastro` varchar(16) DEFAULT NULL,
   `Sexo` varchar(33) DEFAULT NULL,
-  `Nome do solicitante` varchar(100) DEFAULT NULL,
   `Requisicao` varchar(33) DEFAULT NULL,
+  `Nome do solicitante` varchar(100) DEFAULT NULL,
   `Material coletado` varchar(33) DEFAULT NULL,
   `Resultado` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
