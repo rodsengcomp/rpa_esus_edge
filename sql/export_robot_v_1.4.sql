@@ -10,6 +10,12 @@
 TRUNCATE TABLE esus_total;
 -- TRUNCATE TABLE biofast_lab;
 
+row.Item(8).ToString = "" AND row.Item(10).ToString = "" AND row.Item(14).ToString = "" AND row.Item(17).ToString = "" AND row.Item(20).ToString = ""
+AND row.Item(23).ToString = "" AND row.Item(26).ToString = "" AND row.Item(29).ToString = "" AND row.Item(32).ToString = "" AND row.Item(35).ToString = ""
+AND row.Item(40).ToString = "" AND row.Item(46).ToString = "" AND row.Item(52).ToString = "" AND row.Item(10).ToString = ""
+
+
+row.Item(5).ToString.Contains("Olfativos") OR row.Item(5).ToString.Contains("Gustativos")
 
 --*** Script de extração mensal de dados retirados no eSUS Notifica -> https://notifica.saude.gov.br/exportacoes --***
 
