@@ -28,6 +28,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `esus_covisa` (
+  `COD_DISTRI` varchar(2) DEFAULT NULL,
   `NU_NOTIFIC` varchar(13) NOT NULL,
   `NU_CPF` varchar(11) DEFAULT NULL,
   `OP_CNES` varchar(51) DEFAULT NULL,
@@ -118,23 +119,11 @@ CREATE TABLE `esus_covisa` (
   `CLASSI_COS` varchar(19) DEFAULT NULL,
   `CLASSICOMS` varchar(29) DEFAULT NULL,
   `COD_RESULT` varchar(29) DEFAULT NULL,
-  `geocode` varchar(29) DEFAULT NULL,
-  `latsirgas` varchar(18) DEFAULT NULL,
-  `lonsirgas` varchar(25) DEFAULT NULL,
-  `nome_distr` varchar(25) DEFAULT NULL,
-  `subpref` varchar(25) DEFAULT NULL,
-  `sts` varchar(27) DEFAULT NULL,
-  `crs` varchar(44) DEFAULT NULL,
-  `uvis` varchar(34) DEFAULT NULL,
-  `cnes` varchar(46) DEFAULT NULL,
-  `nomeubs` varchar(48) DEFAULT NULL,
-  `esf` varchar(38) DEFAULT NULL,
-  `sts_ubs` varchar(38) DEFAULT NULL,
-  `crs_ubs` varchar(17) DEFAULT NULL,
-  `cd_geocodi` varchar(17) DEFAULT NULL,
-  `ipvs` varchar(17) DEFAULT NULL,
-  `cod_ap` varchar(17) DEFAULT NULL,
-  `COD_DISTRI` varchar(10) DEFAULT NULL
+  `NOME_DISTR` varchar(18) DEFAULT NULL,
+  `SUBPREF` varchar(25) DEFAULT NULL,
+  `STS` varchar(25) DEFAULT NULL,
+  `UVIS` varchar(25) DEFAULT NULL,
+  `CRS` varchar(27) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
