@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "mQjNCjrWO7MeMFcFoUxG0+Gr4/BBy8EB147YZFRa64cDiqsV4O5+gYJCm7Dr9uuhTo44Uo2R0w/CF69kc+KvJQ==",
+  "dgSpecHash": "vO+mL+WCA2U6T2i/8XaCHr4hS7HaEU6znoFcGIM4jiW0uj1Zn6Q6yrobwAv2n/1PX6nSGd15nLGxtk6Mm9CfuQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Administrador\\Documents\\UiPath\\rpa_esus_edge\\.local\\",
+  "projectFilePath": "C:\\Users\\Administrador\\Documents\\Uipath\\rpa_esus_edge\\.local\\",
   "expectedPackageFiles": [
     "C:\\Users\\Administrador\\.nuget\\packages\\balareva.easyexcel.activities\\29.1.1\\balareva.easyexcel.activities.29.1.1.nupkg.sha512",
     "C:\\Users\\Administrador\\.nuget\\packages\\closedxml\\0.87.1\\closedxml.0.87.1.nupkg.sha512",
