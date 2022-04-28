@@ -2074,7 +2074,7 @@
         }
       }
     },
-    ".NETFramework,Version=v4.6.1/win10-x64": {
+    ".NETFramework,Version=v4.6.1/win7-x86": {
       "BalaReva.EasyExcel.Activities/29.1.1": {
         "type": "package",
         "dependencies": {
@@ -2796,7 +2796,7 @@
           "lib/net45/Microsoft.Web.WebView2.Wpf.dll": {}
         },
         "native": {
-          "runtimes/win-x64/native/_._": {}
+          "runtimes/win-x86/native/_._": {}
         },
         "build": {
           "build/_._": {}
@@ -7690,15 +7690,15 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Cliente\\.nuget\\packages\\": {}
+    "C:\\Users\\Administrador\\.nuget\\packages\\": {}
   },
   "project": {
     "restore": {
       "projectUniqueName": "rpa_robot_esus_edge_version_1_1_0_21",
       "projectName": "rpa_robot_esus_edge_version_1_1_0_21",
-      "projectPath": "C:\\Users\\Cliente\\Documents\\Uipath\\rpa_esus_edge\\.local",
-      "packagesPath": "C:\\Users\\Cliente\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Cliente\\Documents\\Uipath\\rpa_esus_edge\\.local"
+      "projectPath": "C:\\Users\\Administrador\\Documents\\Uipath\\rpa_esus_edge\\.local",
+      "packagesPath": "C:\\Users\\Administrador\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Administrador\\Documents\\Uipath\\rpa_esus_edge\\.local"
     },
     "frameworks": {
       "net461": {
@@ -7734,12 +7734,7 @@
             "version": "[21.10.1, 21.10.1]"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Users\\Cliente\\AppData\\Local\\Programs\\UiPath\\Studio\\runtime.json"
-      }
-    },
-    "runtimes": {
-      "win10-x64": {
-        "#import": []
+        "runtimeIdentifierGraphPath": "C:\\Users\\Administrador\\AppData\\Local\\UiPath\\app-21.4.4\\runtime.json"
       }
     }
   }
