@@ -113,13 +113,21 @@
           <av:Size x:Key="ShapeSize">200,66</av:Size>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
+<<<<<<< Updated upstream
       <Sequence DisplayName="Sequência BOT ROLUWA" sap:VirtualizedContainerService.HintSize="2000,4580" sap2010:WorkflowViewState.IdRef="Sequence_1">
+=======
+      <Sequence DisplayName="Sequência BOT ROLUWA" sap:VirtualizedContainerService.HintSize="1955,4548" sap2010:WorkflowViewState.IdRef="Sequence_1">
+>>>>>>> Stashed changes
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
+<<<<<<< Updated upstream
         <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope Esus Notifica" sap:VirtualizedContainerService.HintSize="1958,260" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" InstanceCachePeriod="3000" WorkbookPath="fechamento_2021\fechamento_setembro\GeralSetembro3.xlsx">
+=======
+        <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope Esus Notifica" sap:VirtualizedContainerService.HintSize="1913,260" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" InstanceCachePeriod="3000" WorkbookPath="fechamento_2021\fechamento_outubro\GeralOutubro2.xlsx">
+>>>>>>> Stashed changes
           <ui:ExcelApplicationScope.Body>
             <ActivityAction x:TypeArguments="ui:WorkbookApplication">
               <ActivityAction.Argument>
@@ -148,32 +156,52 @@
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
         </ui:ExcelApplicationScope>
+<<<<<<< Updated upstream
         <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[excel_esus]" DisplayName="For Each Row in Data Table Esus Notifica" sap:VirtualizedContainerService.HintSize="1958,4188" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+=======
+        <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[excel_esus]" DisplayName="For Each Row in Data Table Esus Notifica" sap:VirtualizedContainerService.HintSize="1913,4156" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+>>>>>>> Stashed changes
           <ui:ForEachRow.Body>
             <ActivityAction x:TypeArguments="sd:DataRow">
               <ActivityAction.Argument>
                 <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
               </ActivityAction.Argument>
+<<<<<<< Updated upstream
               <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="1924,4015" sap2010:WorkflowViewState.IdRef="Sequence_3">
+=======
+              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="1879,3983" sap2010:WorkflowViewState.IdRef="Sequence_3">
+>>>>>>> Stashed changes
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
+<<<<<<< Updated upstream
                 <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Edge: e-SUS Notifica" sap:VirtualizedContainerService.HintSize="1882,3891" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="IfNotOpen" ScopeGuid="ace6996b-1782-4e69-828e-e6d71de2871f" Version="V1" WindowResize="Maximize">
+=======
+                <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Edge: e-SUS Notifica" sap:VirtualizedContainerService.HintSize="1837,3891" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="IfNotOpen" ScopeGuid="ace6996b-1782-4e69-828e-e6d71de2871f" Version="V1" WindowResize="Maximize">
+>>>>>>> Stashed changes
                   <uix:NApplicationCard.Body>
                     <ActivityAction x:TypeArguments="x:Object">
                       <ActivityAction.Argument>
                         <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                       </ActivityAction.Argument>
+<<<<<<< Updated upstream
                       <Sequence DisplayName="Fazer" sap:VirtualizedContainerService.HintSize="1848,3675" sap2010:WorkflowViewState.IdRef="Sequence_4">
+=======
+                      <Sequence DisplayName="Fazer" sap:VirtualizedContainerService.HintSize="1803,3675" sap2010:WorkflowViewState.IdRef="Sequence_4">
+>>>>>>> Stashed changes
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
+<<<<<<< Updated upstream
                         <ui:IfElseIf DisplayName="Else If" sap:VirtualizedContainerService.HintSize="1806,3581" sap2010:WorkflowViewState.IdRef="IfElseIf_60">
+=======
+                        <ui:IfElseIf DisplayName="Else If" sap:VirtualizedContainerService.HintSize="1761,3581" sap2010:WorkflowViewState.IdRef="IfElseIf_60">
+>>>>>>> Stashed changes
                           <ui:IfElseIf.ConditionBlocks>
                             <sc:BindingList x:TypeArguments="ui:IfElseIfBlock" AllowEdit="True" AllowNew="True" AllowRemove="True" RaiseListChangedEvents="True">
                               <ui:IfElseIfBlock BlockType="If" Condition="[row.Item(8).ToString = &quot;&quot; AND row.Item(10).ToString = &quot;&quot;]">
@@ -1469,7 +1497,7 @@
                                                     </Sequence>
                                                   </If.Else>
                                                 </If>
-                                                <If Condition="[sind_gne = &quot;ios in-item interactive hydrated&quot;]" DisplayName="If Sind. G. N. E." sap:VirtualizedContainerService.HintSize="484,253" sap2010:WorkflowViewState.IdRef="If_247">
+                                                <If Condition="[sind_gne = &quot;ios in-item interactive hydrated&quot;]" DisplayName="If Sind. G. N. E." sap:VirtualizedContainerService.HintSize="726,51" sap2010:WorkflowViewState.IdRef="If_247">
                                                   <sap:WorkflowViewStateService.ViewState>
                                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                       <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -1710,14 +1738,22 @@
                                         <sc:BindingList x:TypeArguments="ui:IfElseIfBlock" AllowEdit="True" AllowNew="True" AllowRemove="True" RaiseListChangedEvents="True">
                                           <ui:IfElseIfBlock BlockType="If" Condition="[row.Item(10).ToString &lt;&gt; &quot;&quot;]">
                                             <ui:IfElseIfBlock.Then>
+<<<<<<< Updated upstream
                                               <Sequence DisplayName="RT-PCR eSUS Notifica" sap:VirtualizedContainerService.HintSize="951,1479" sap2010:WorkflowViewState.IdRef="Sequence_471">
+=======
+                                              <Sequence DisplayName="RT-PCR eSUS Notifica" sap:VirtualizedContainerService.HintSize="664,1479" sap2010:WorkflowViewState.IdRef="Sequence_471">
+>>>>>>> Stashed changes
                                                 <sap:WorkflowViewStateService.ViewState>
                                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                                   </scg:Dictionary>
                                                 </sap:WorkflowViewStateService.ViewState>
+<<<<<<< Updated upstream
                                                 <ui:IfElseIf DisplayName="Else If RT-PCR eSUS Notifica" sap:VirtualizedContainerService.HintSize="909,1387" sap2010:WorkflowViewState.IdRef="IfElseIf_68">
+=======
+                                                <ui:IfElseIf DisplayName="Else If RT-PCR eSUS Notifica" sap:VirtualizedContainerService.HintSize="622,1387" sap2010:WorkflowViewState.IdRef="IfElseIf_68">
+>>>>>>> Stashed changes
                                                   <ui:IfElseIf.ConditionBlocks>
                                                     <sc:BindingList x:TypeArguments="ui:IfElseIfBlock" AllowEdit="True" AllowNew="True" AllowRemove="True" RaiseListChangedEvents="True">
                                                       <ui:IfElseIfBlock BlockType="If" Condition="[row.Item(10).ToString = &quot;Detectável&quot;]">
