@@ -1,9 +1,15 @@
 {
   "version": 2,
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   "dgSpecHash": "DPhKFEztLIJ2vK88rj43EZKYAnnw2NopILqkUW5ibU8TcHD81NvOBGKDvoFtKzXphGtW1+3+j44A+Ooete398Q==",
   "success": true,
   "projectFilePath": "C:\\Users\\d788796\\Documents\\Uipath\\rpa_esus_edge\\.local\\",
+=======
+  "dgSpecHash": "mQjNCjrWO7MeMFcFoUxG0+Gr4/BBy8EB147YZFRa64cDiqsV4O5+gYJCm7Dr9uuhTo44Uo2R0w/CF69kc+KvJQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Administrador\\Documents\\UiPath\\rpa_esus_edge\\.local\\",
+>>>>>>> Stashed changes
 =======
   "dgSpecHash": "mQjNCjrWO7MeMFcFoUxG0+Gr4/BBy8EB147YZFRa64cDiqsV4O5+gYJCm7Dr9uuhTo44Uo2R0w/CF69kc+KvJQ==",
   "success": true,

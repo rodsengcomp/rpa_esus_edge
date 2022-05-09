@@ -11,7 +11,11 @@
   </PropertyGroup>
   <ItemGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     <SourceRoot Include="C:\Users\d788796\.nuget\packages\" />
+=======
+    <SourceRoot Include="C:\Users\Administrador\.nuget\packages\" />
+>>>>>>> Stashed changes
 =======
     <SourceRoot Include="C:\Users\Administrador\.nuget\packages\" />
 >>>>>>> Stashed changes
