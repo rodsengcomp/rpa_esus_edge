@@ -41,12 +41,7 @@
     "processOptions": {
       "ignoredFiles": []
     },
-    "fileInfoCollection": [
-      {
-        "templateType": "Generic",
-        "fileName": ".templates\\MainModelo.xaml"
-      }
-    ],
+    "fileInfoCollection": [],
     "modernBehavior": false
   },
   "expressionLanguage": "VisualBasic",
